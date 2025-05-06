@@ -3,11 +3,21 @@
 
 A full-stack Task Tracking application built with **MERN stack** (MongoDB, Express.js, React, Node.js). It supports user authentication, task CRUD, and analytics dashboard. Ideal for personal productivity, portfolio demonstration, or learning full-stack development.
 
+![Login Page](screenshots/Screenshot 2025-05-06 at 21.25.20.png)
+*Login page showing user authentication*
+
+![Tasks Page](screenshots/Screenshot 2025-05-06 at 21.25.46.png)
+*Tasks page with task management UI*
+
+![Dashboard](screenshots/Screenshot 2025-05-06 at 21.26.03.png)
+*Analytics dashboard with exchange rates and map*
+
 ## Features
 
 - User Authentication (JWT-based)
 - Task Management (Add, View, Delete)
-- Analytics Dashboard
+- Analytics Dashboard with data visualizations
+- Location map integration (Leaflet)
 - Fully Responsive Frontend using MUI
 - Protected Routes with React Router
 - Backend API with Express & MongoDB
@@ -32,22 +42,11 @@ A full-stack Task Tracking application built with **MERN stack** (MongoDB, Expre
 ```
 /task-tracker
 │
-├── backend
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── utils/
-│   ├── .env.example
-│   └── server.js
-│
-└── client
-    ├── public/
-    ├── src/
-    │   ├── pages/
-    │   ├── components/
-    │   └── App.js
-    └── package.json
+├── backend/
+│   └── ... (controllers, middleware, models, routes)
+/client/
+│   └── ... (src, public, package.json)
+└── README.md
 ```
 
 ---
@@ -60,51 +59,54 @@ A full-stack Task Tracking application built with **MERN stack** (MongoDB, Expre
 - MongoDB installed and running
 - Git
 
-### Environment Variables
-
-Copy and update `.env` in `backend/` folder:
-
-```
-MONGO_URI=mongodb://localhost:27017/tasktracker
-JWT_SECRET=your_jwt_secret_here
-CLIENT_URL=http://localhost:3000
-```
-
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/task-tracker.git
-cd task-tracker
+git clone https://github.com/ABDURAHM4M/Task-Tracker.git
+cd Task-Tracker
 
 # Install backend dependencies
 cd backend
 npm install
 
 # Install frontend dependencies
-cd ../client
+cd client
 npm install
 ```
 
-### Run App Locally
+### Environment Variables
+
+Create `.env` in `backend/`:
+
+```
+PORT=5001
+MONGO_URI=mongodb://localhost:27017/tasktracker
+JWT_SECRET=your_jwt_secret_here
+CLIENT_URL=http://localhost:3000
+```
+
+Create `.env.local` in `client/`:
+
+```
+REACT_APP_API_URL=http://localhost:5000
+```
+
+### Running Locally
 
 **Backend**
-
-```bash
+```
 cd backend
 npm run dev
-# or if using production mode
-npm start
 ```
 
 **Frontend**
-
-```bash
+```
 cd client
 npm start
 ```
 
-Visit: `http://localhost:3000`
+Visit `http://localhost:3000`
 
 ---
 
@@ -120,24 +122,10 @@ Visit: `http://localhost:3000`
 
 ---
 
-## Screenshots
-
-(Include screenshots of login page, dashboard, task page, analytics here)
-
----
-
 ## Deployment
 
-You can deploy this project using services like:
-
-- **Render**, **Vercel**, **Netlify**, or **Heroku** (for frontend)
-- **Railway**, **Render**, or **MongoDB Atlas** (for backend + DB)
-
----
-
-## Contribution
-
-Feel free to open issues or submit PRs.
+- **Frontend:** GitHub Pages (automated via GitHub Actions)
+- **Backend:** Render auto-deploy on GitHub push
 
 ---
 
